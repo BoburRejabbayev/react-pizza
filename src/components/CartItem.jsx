@@ -7,16 +7,22 @@ export default function CartItem({ id, title, price, sizes, types, imageUrl, cou
     const dispatch = useDispatch()
 
 
+
     function removeItems() {
-        const item = {
-            id,
-            types,
-            sizes
+        let ask = prompt('Rostan ochirmoqchimisiz unda ha deb yoizng', 'yoq')
+        if (ask === 'ha') {
+            alert('Pizzalar ochirildi')
+            const item = {
+                id,
+                types,
+                sizes
+            }
+            dispatch(removeItem(item))
         }
-        dispatch(removeItem(item))
+        else alert('Keyingi safar extiyot boling')
     }
 
-    function onAddedItem() {
+    function onAddedItem(count) {
         const item = {
             id,
             title,
@@ -26,6 +32,7 @@ export default function CartItem({ id, title, price, sizes, types, imageUrl, cou
             types
         }
         dispatch(addItem(item))
+
     }
     function removedCount() {
         const item = {

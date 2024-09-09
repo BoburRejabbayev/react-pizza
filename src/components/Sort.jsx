@@ -68,9 +68,7 @@ export default function Sort(props) {
             {openSort &&
                 <div className="sort__popup">
                     <ul>
-
                         {list.map((list, i) => <li onClick={() => onSorted(i, list)} className={sortId === i ? 'active' : ' '} key={i} >{list.name}</li>)}
-
                         {/* <li className="active">популярности</li>
                         <li>цене</li>
                         <li>алфавиту</li> */}

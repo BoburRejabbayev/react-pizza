@@ -18,7 +18,10 @@ const cartSlice = createSlice({
             const findItem = state.item.find((obj) => (obj.id === action.payload.id && obj.types === action.payload.types && obj.sizes === action.payload.sizes))
 
             if (findItem) {
-                findItem.count += 1
+                if (findItem.count >= 5) {
+                    alert('5tadan kop mumkinmas')
+                }
+                else findItem.count += 1
             } else {
                 state.item.push({
                     ...action.payload,
